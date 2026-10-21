@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { width: 260px; margin: 0; padding: 14px 16px; font: 13px/1.4 system-ui, -apple-system, sans-serif; color: #1f2328; }
+      h1 { font-size: 15px; margin: 0 0 12px; }
+      label { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 10px 0; }
+      input[type='text'] { width: 130px; padding: 4px 6px; border: 1px solid #d0d7de; border-radius: 5px; }
+      input[type='range'] { width: 130px; }
+      .row { display: flex; gap: 8px; margin-top: 14px; }
+      button { flex: 1; padding: 6px; border: 1px solid #d0d7de; border-radius: 6px; background: #f6f8fa; cursor: pointer; font: inherit; }
+      button:hover { background: #eaeef2; }
+      .hint { color: #656d76; font-size: 11px; margin-top: -4px; }
+    </style>
+  </head>
+  <body>
+    <h1>Codeforces Verdict Alerts</h1>
+    <label>Enabled <input type="checkbox" id="enabled" /></label>    <label>Volume <input type="range" id="volume" min="0" max="1" step="0.05" /></label>
+    <label>Handle <input type="text" id="handle" placeholder="auto-detect" /></label>
+    <div class="hint">Leave blank to use the account you're logged in with.</div>
+    <div class="row">
+      <button id="test-ac">👏 Test AC</button>
+      <button id="test-wa">😢 Test WA</button>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

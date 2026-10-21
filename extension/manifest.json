@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Codeforces Verdict Alerts",
+  "version": "1.0.0",
+  "minimum_chrome_version": "116",
+  "description": "Plays applause when your Codeforces submission is Accepted, and a sad trombone when it isn't.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["offscreen", "storage"],
+  "host_permissions": ["https://codeforces.com/*", "https://*.codeforces.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://codeforces.com/*", "https://*.codeforces.com/*"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Codeforces Verdict Alerts",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  }
+}
